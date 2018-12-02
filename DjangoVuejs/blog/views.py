@@ -15,7 +15,7 @@ exclude_posts = ("shares","Happy Birthday To My Princess",)
 
 def args_generator(args, blogposts):
     contents = [blogquery.display_html() for blogquery in blogposts]
-    urls = [blogquery.get_api_absolute_url() for blogquery in blogposts]
+    urls = [blogquery.get_absolute_url() for blogquery in blogposts]
     alltags = [blogquery.tags.all() for blogquery in blogposts]
     bolgList = json.loads(serializers.serialize("json", blogposts))
 
@@ -29,7 +29,7 @@ def args_generator(args, blogposts):
 
 def entire_blogpost(blogpost):
     content = blogpost.display_html()
-    url = blogpost.get_api_absolute_url()
+    url = blogpost.get_absolute_url()
     alltags = blogpost.tags.all()
     blogpost_json = json.loads(serializers.serialize("json", [blogpost]))
     blogpost_json = blogpost_json[0]

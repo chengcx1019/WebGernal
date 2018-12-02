@@ -11,6 +11,7 @@ from django.urls import path,re_path
 from django.views.generic.base import TemplateView
 
 from . import views
+from .feeds import LatestEntriesFeed
 
 urlpatterns = [
     # path(r'', TemplateView.as_view(template_name='index.html')),
@@ -19,6 +20,7 @@ urlpatterns = [
     re_path(r'^api/(?P<slug>[-\w\d]+),(?P<post_id>\d+)/$', views.api_blogpost, name='api_blogpost_slug_id'),
     re_path('^api/archive', views.api_archive, name='api_archive'),
     re_path('^api/shares', views.api_shares, name='api_shares'),
+    re_path('^feed', LatestEntriesFeed()),
 ]
 
 

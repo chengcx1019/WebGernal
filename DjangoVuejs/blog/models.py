@@ -36,11 +36,11 @@ class BlogPost(models.Model):
         return upload_to
 
     CATEGORY_CHOICES = (
+        ('ml', 'Machine Learning'),
+        ('ani', 'Animation'),
+        ('su', 'Summary'),
         ('programming', 'Programming'),
         ('acg', 'animation & summary & machine learning'),
-        ('ani', 'Animation'),
-        ('ml', 'Machine Learning'),
-        ('su', 'Summary'),
         ('nc', 'No Category'),
         ('oth', 'Others'),
     )
@@ -85,17 +85,17 @@ class BlogPost(models.Model):
 
         super().save(*args, **kwargs)
 
+
+
+
     def display_html(self):
         with open(self.html_file.path, encoding='utf-8') as f:
             return f.read()
 
     def get_absolute_url(self):
-        return reverse('blogpost_slug_id',
-                       kwargs={'slug': self.slug, 'post_id': self.id})
-
-    def get_api_absolute_url(self):
         return reverse('api_blogpost_slug_id',
                        kwargs={'slug': self.slug, 'post_id': self.id})
+
 
 
 @receiver(pre_delete, sender=BlogPost)
@@ -113,3 +113,5 @@ class BlogPostImage(models.Model):
 
     blogpost = models.ForeignKey(BlogPost, False, related_name='images')
     image = models.ImageField(upload_to=get_upload_img_name)
+
+
