@@ -62,7 +62,7 @@ ROOT_URLCONF = 'DjangoVuejs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/changxin/Documents/UnityPK/WebGernal/DjangoVuejs/WebFrontAll/blogfront/dist'],
+        'DIRS': ['/home/changxin/deploy/blog/WebGernal/DjangoVuejs/WebFrontAll/blogfront/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
