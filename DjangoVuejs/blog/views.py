@@ -102,8 +102,8 @@ def api_archive(request):
 
     args['data'] = [
         ('programming', get_sorted_posts(category="programming")),
-        ('ani', get_sorted_posts(category="ani")),
         ('ml', get_sorted_posts(category="ml")),
+        ('ani', get_sorted_posts(category="ani")),
         ('su', get_sorted_posts(category="su")),
         ('oth', get_sorted_posts(category="oth")),
     ]
