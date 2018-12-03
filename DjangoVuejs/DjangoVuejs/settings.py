@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'DjangoVuejs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DjangoVuejs',
+        'NAME': 'blogcx',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': 'localhost',
