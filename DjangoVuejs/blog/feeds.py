@@ -19,7 +19,7 @@ class LatestEntriesFeed(Feed):
     description = "Updates on changes and additions to police beat central."
 
     def items(self):
-        return BlogPost.objects.order_by('pub_date')[:5]
+        return BlogPost.objects.order_by('-pub_date')[:5]  # '-pub_date' represent the lastest
 
     def item_title(self, item):
         return item.title
